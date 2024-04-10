@@ -295,3 +295,10 @@ client id
 client kill 127.0.0.1:59402
 # OK
 ```
+
+## Protected Mode
+
+- Default only `127.0.0.1`.
+- Add more access by another connection in `redis.conf` with your IP address `bind 192.168.10.93`.
+- To connect `redis-cli -h 192.168.10.93 -p 6379`
+
