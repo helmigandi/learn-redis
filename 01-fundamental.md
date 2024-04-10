@@ -282,3 +282,16 @@ config get save
 # 1) "save"
 # 2) "3600 1 300 100 60 10000"
 ```
+
+## Client Connection
+
+```bash
+client list
+# id=7 addr=127.0.0.1:59402 laddr=127.0.0.1:6379 fd=8 name= age=338 idle=0
+
+client id
+# (integer) 7
+
+client kill 127.0.0.1:59402
+# OK
+```
