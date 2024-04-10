@@ -175,3 +175,27 @@ Remove all data in one database (`flushdb`) and remove all data in all database 
 flushdb
 # OK
 ```
+
+## Pipeline
+
+Save many data or bulk data to Redis.
+
+- Create `username_list.txt` file
+
+  ```txt
+  setex username_7 180 "sasukeanbu007"
+  setex username_8 180 "jokosusilo01"
+  setex username_9 180 "lisanur90"
+  setex username_10 180 "ayulestari33"
+  ```
+
+- Save command
+
+  ```bash
+  redis-cli -h localhost -p 6379 -n 0 --pipe < username_list.txt
+  # All data transferred. Waiting for the last reply...
+  # Last reply received from server.
+  # errors: 0, replies: 4
+  ```
+
+  - `-n 0` is database number.
