@@ -147,3 +147,22 @@ ttl username_6
 ttl username_6
 # (integer) -2
 ```
+
+## Increment & Decrement
+
+```bash
+set total_items "13"
+# OK
+
+incr total_items
+# (integer) 14
+
+decr total_items
+# (integer) 13
+
+incrby total_items 5
+# (integer) 18
+
+decrby total_items 3
+# (integer) 15
+```
