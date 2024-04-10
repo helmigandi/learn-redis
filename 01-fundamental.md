@@ -302,3 +302,19 @@ client kill 127.0.0.1:59402
 - Add more access by another connection in `redis.conf` with your IP address `bind 192.168.10.93`.
 - To connect `redis-cli -h 192.168.10.93 -p 6379`
 
+## Security
+
+A good way to generate strong passwords is via the `ACL GENPASS` command.
+
+- Add to `redis.conf`
+
+  ```txt
+  user default on +@connection
+  user helmidev on +@all ~* >supersecret
+  ```
+
+- Auth command
+
+  ```bash
+  auth helmidev supersecret
+  ```
