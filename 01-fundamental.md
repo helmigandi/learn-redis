@@ -199,3 +199,49 @@ Save many data or bulk data to Redis.
   ```
 
   - `-n 0` is database number.
+
+## Transaction
+
+```bash
+# Success
+
+multi
+# OK
+
+setex product_1 180 "samsung"
+# QUEUED
+
+setex product_2 180 "sony"
+# QUEUED
+
+setex product_3 180 "polytron"
+# QUEUED
+
+exec
+# 1) OK
+# 2) OK
+# 3) OK
+
+mget product_1 product_2 product_3
+# 1) "samsung"
+# 2) "sony"
+# 3) "polytron"
+
+# Fail
+
+multi
+# OK
+
+setex product_4 180 "apple"
+# QUEUED
+
+setex product_5 180 "lg"
+# QUEUED
+
+discard
+# OK
+
+mget product_4 product_5
+# 1) (nil)
+# 2) (nil)
+```
