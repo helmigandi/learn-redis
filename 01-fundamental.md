@@ -245,3 +245,12 @@ mget product_4 product_5
 # 1) (nil)
 # 2) (nil)
 ```
+
+## Monitor
+
+```bash
+monitor
+# OK
+# 1712718406.858241 [0 127.0.0.1:45636] "setex" "username_1" "180" "bambangnur21"
+# 1712718427.252019 [0 127.0.0.1:45636] "setex" "username_2" "180" "uzumakirozak99"
+```
