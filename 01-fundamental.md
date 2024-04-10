@@ -124,3 +124,26 @@ mget username_4 username_5
 ```
 
 ## Expiration
+
+```bash
+expire username_2 5
+# (integer) 1
+
+# after 5 secs
+
+get username_2
+# (nil)
+
+setex username_6 20 "uzumakianto52"
+# 
+
+# before 20 secs
+
+ttl username_6
+# (integer) 14
+
+# after 20 secs
+
+ttl username_6
+# (integer) -2
+```
