@@ -254,3 +254,31 @@ monitor
 # 1712718406.858241 [0 127.0.0.1:45636] "setex" "username_1" "180" "bambangnur21"
 # 1712718427.252019 [0 127.0.0.1:45636] "setex" "username_2" "180" "uzumakirozak99"
 ```
+
+## Server Information
+
+```bash
+info
+# Server
+# redis_version:7.2.4
+# redis_git_sha1:00000000
+# redis_git_dirty:0
+# redis_build_id:d65a7e4dbe7bb1e4
+# redis_mode:standalone
+# os:Linux 6.5.0-26-generic x86_64
+# arch_bits:64
+```
+
+```bash
+config get databases
+# 1) "databases"
+# 2) "16"
+
+config get bind
+# 1) "bind"
+# 2) "127.0.0.1 -::1"
+
+config get save
+# 1) "save"
+# 2) "3600 1 300 100 60 10000"
+```
