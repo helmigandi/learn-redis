@@ -95,3 +95,32 @@ get username_1
 
 # (nil)
 ```
+
+### Range
+
+```bash
+get username_2
+# "rahmat2209"
+
+setrange username_2 6 "1995"
+# (integer) 10
+
+get username_2
+# "rahmat1995"
+
+getrange username_2 6 -1
+# "1995"
+```
+
+### Multiple Data
+
+```bash
+mset username_4 "shanti21" username_5 "rozak78"
+# OK
+
+mget username_4 username_5
+# 1) "shanti21"
+# 2) "rozak78"
+```
+
+## Expiration
