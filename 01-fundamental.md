@@ -166,3 +166,12 @@ incrby total_items 5
 decrby total_items 3
 # (integer) 15
 ```
+
+## Flush
+
+Remove all data in one database (`flushdb`) and remove all data in all database (`flushall`).
+
+```bash
+flushdb
+# OK
+```
