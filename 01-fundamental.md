@@ -318,3 +318,23 @@ A good way to generate strong passwords is via the `ACL GENPASS` command.
   ```bash
   auth helmidev supersecret
   ```
+
+## Persistance
+
+- Do not make Redis persistance
+- Data will save in `dump.rdb`
+
+```bash
+save 3600 1 300 100 60 10000
+#   * After 3600 seconds (an hour) if at least 1 change was performed
+#   * After 300 seconds (5 minutes) if at least 100 changes were performed
+#   * After 60 seconds if at least 10000 changes were performed
+```
+
+```bash
+# save synchronous
+save
+
+# save asynchronous
+bgsave
+```
