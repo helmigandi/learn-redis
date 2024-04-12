@@ -1,4 +1,7 @@
-# Spring Redis By PZN
+# Learn Redis By PZN
+
+- [Redis Fundamental](/01-fundamental.md)
+- [Redis Data Structure](/02-data_structures.md)
 
 ## Requirements
 
