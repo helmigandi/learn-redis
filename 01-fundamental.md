@@ -310,8 +310,14 @@ A good way to generate strong passwords is via the `ACL GENPASS` command.
 
   ```txt
   user default on +@connection
-  user helmidev on +@all ~* >supersecret
+  user helmidev on +@all ~* &* >supersecret
   ```
+
+  - default user is configured to be active (`on`) and get in connect only (`+@connection`),
+  - `helmidev` user is configured to be active (`on`),
+  - to access every possible key (`~*`),
+  - Pub/Sub channel (`&*`),
+  - Be able to call every possible command (`+@all`).
 
 - Auth command
 
